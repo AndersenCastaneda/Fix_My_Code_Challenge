@@ -12,12 +12,14 @@ class square():
 
     def __init__(self, *args, **kwargs):
         """ Constructor """
+        if (kwargs['width'] != kwargs['height']):
+            return
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.width
+        return self.width * self.height
 
     def PermiterOfMySquare(self):
         """ Perimeter of th esquare """
