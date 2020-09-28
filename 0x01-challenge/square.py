@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """
-square Class
+Square Class
 """
 
 
 class square():
-    """ square Class """
+    """ Square Class """
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, *args, **kwargs):
         """ Constructor """
-        self.width = width
-        self.height = height
+        self.width = 0
+        self.height = 0
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -23,7 +25,6 @@ class square():
     def __str__(self):
         """ Object string representation """
         return "{}/{}".format(self.width, self.height)
-
 
 if __name__ == "__main__":
     s = square(width=12, height=9)
